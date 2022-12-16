@@ -1,0 +1,203 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block main %}
+
+
+   <div class="intro" id="intro">
+       <div class="container">
+           <div class="intro__inner">
+                <h1 class="intro__title">Горизонт - это качество, скорость, надёжность, доверие</h1>
+                <h4 class="intro__desc">строительная компания для вас!</h4>
+
+                <a class="intro__button" href="#" data-scroll="#about">Узнать больше</a>
+            </div>
+       </div>
+   </div>
+
+   <section class="section" id="about">
+       <div class="container">
+
+           <div class="section__header">
+               <h2 class="section__title">О нас</h2>
+           </div>
+
+           <div data-aos="fade-right" class="about">
+               <div class="about__item">
+                   <p class="about__text">
+                        Мы строительная компания "Горизонт", весь катаог компании можно посмотреть по кнопке "Смотреть весь каталог". На главной страницы представленны только некоторые товары из каталога.Что бы купить товар, надо добавить его в корзину, оформить заказ и преехать по адресу, который указан в блоке "Контакты" или связаться с нами. Регистрация на сайте не обезательна!
+                    </p>
+               </div>
+               <div data-aos="fade-left" class="about__item item-2">
+                   <div data-aos="fade-left" class="about__img-1">
+                       <img src="{% static 'img/about-1.jpg' %}" alt="about-1">
+                   </div>
+                   <div data-aos="fade-left" class="about__img-2">
+                        <img src="{% static 'img/about-2.jpg' %}" alt="about-2">
+                   </div>
+               </div>
+           </div>
+
+           <div class="section__footer">
+<!--                   <span class="span-1">Сайт посетили:</span>-->
+<!--                   <span class="span-2">1000 человек</span>-->
+                <div class="down-btn" data-scroll="#catalog">
+                    <i class="fa-solid fa-arrow-down"></i>
+                </div>
+            </div>
+
+       </div>
+   </section>
+
+
+    <section class="section" id="catalog">
+        <div class="container catalog">
+
+            <div class="section__header">
+               <h2 class="section__title">Каталог</h2>
+           </div>
+
+           <div class="slider" id="slider">
+
+
+                 <a data-aos="zoom-in" href="/material/banya-lukomore-sever-2m" class="slider__card-1">
+
+                  <img src="{% static 'img/bathouse-lukomore.jpg' %}" alt="forest" class="card__img-1">
+                   <h4 class="card__title-1">Баня Лукоморье</h4>
+                   <p class="card__price-1">
+                      145000руб
+                   </p>
+                   <div class="card__plus-1">
+                      <i id="plus" class="fa-solid fa-plus"></i>
+                   </div>
+
+                 </a>
+
+                 <a data-aos="zoom-in" href="/material/banya-skandinaviya" class="slider__card-1">
+
+                  <img src="{% static 'img/bathhouse-scandinavia.jpg' %}" alt="bathouse" class="card__img-1">
+                   <h4 class="card__title-1">Баня Скандинавия</h4>
+                   <p class="card__price-1">
+                      195000руб
+                   </p>
+                   <div class="card__plus-1">
+                      <i id="plus" class="fa-solid fa-plus"></i>
+                   </div>
+
+                 </a>
+
+                 <a data-aos="zoom-in" href="/material/banya-flagman" class="slider__card-1">
+
+                  <img src="{% static 'img/bathouse-flagman.jpg' %}" alt="bathouse" class="card__img-1">
+                   <h4 class="card__title-1">Баня Флагман</h4>
+                   <p class="card__price-1">
+                      282000руб
+                   </p>
+                   <div class="card__plus-1">
+                      <i id="plus" class="fa-solid fa-plus"></i>
+                   </div>
+
+                 </a>
+
+                 <a data-aos="zoom-in" href="/material/banya-mazhor" class="slider__card-1">
+
+                  <img src="{% static 'img/bathouse-major.jpg' %}" alt="bathouse" class="card__img-1">
+                   <h4 class="card__title-1">Баня Мажор</h4>
+                   <p class="card__price-1">
+                      359200руб
+                   </p>
+                   <div class="card__plus-1">
+                      <i id="plus" class="fa-solid fa-plus"></i>
+                   </div>
+
+                 </a>
+
+
+
+          </div>
+           <a href="{% url 'catalog' %}" type="button" class="section-3__button">
+            Смотреть весь каталог <i class="fa-solid fa-arrow-right"></i>
+          </a>
+         </div>
+       </section>
+
+
+       <div class="section__header contact__header">
+             <h2 class="section__title">Контакты</h2>
+        </div>
+
+       <section class="section section--map" id="contacti">
+                   <div  data-aos="fade-up"
+     data-aos-anchor-placement="center-bottom" class="container">
+                       <div class="map">
+                        <h2 class="map__title">
+                            <div><i class="fas fa-map-marker-alt"></i></div>
+                            <a href="https://2gis.ru/kurgan/firm/70000001007265560" target="_blank">Open Map</a>
+                        </h2>
+                    </div>
+
+                    <div class="contac__item-text">
+                        <span class="number">+79091499822</span>
+                        <span class="mail">ukravzov@gmail.com</span>
+                     </div>
+
+                </div>
+
+                </section>
+ <footer class="footer">
+
+           <div class="container">
+
+               <div class="footer__inner">
+
+                   <div class="footet__item footer__start">
+
+                           <div class="up-btn">
+                             <i class="fas fa-arrow-up"></i>
+                           </div>
+
+                           <div class="header__logo footer__logo">
+                              <button class="footer__btn-3">ГОРИЗОНТ</button>
+                       </div>
+
+                     </div>
+
+                     <div class="footer__item footer__center">
+
+                          <span>Все права защищены &copy;</span>
+
+                     </div>
+
+                     <div class="footer__item footer__end">
+
+                         <div class="social">
+
+
+                                <div>
+                                  <a href="https://www.youtube.com/channel/UCgMNtb18CYEygaqkbWvCgMA/featured">
+                                    <i id='i_link' class="fab fa-youtube"></i>
+                                  </a>
+                                 </div>
+                                   <div>
+                                     <a href="https://vk.com/id433520181">
+                                       <i id='i_link' class="fa-brands fa-vk"></i>
+                                       </a>
+                                    </div>
+                                   <div>
+                                     <a href="https://web.telegram.org/z/">
+                                       <i id='i_link' class="fa-brands fa-telegram"></i>
+                                       <a href="https://web.telegram.org/z/">
+                                   </div>
+
+
+                           </div>
+
+                     </div>
+
+               </div>
+
+           </div>
+
+       </footer>
+
+
+{% endblock %}

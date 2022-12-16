@@ -1,0 +1,23 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/payment.css' %}">
+    <script src="https://kit.fontawesome.com/62b48361cd.js" crossorigin="anonymous"></script>
+    <title>{{ title }}</title>
+</head>
+<body>
+<section class="section">
+    <div class="container">
+        <div class="payment__main">
+            <h1 class="payment__title">При оплате произошла ошибка</h1>
+            <a href="{% url 'home' %}" class="payment__button">
+                <i class="fa-solid fa-arrow-left"></i>Вернуться на главную
+            </a>
+        </div>
+    </div>
+</section>
+</body>
+</html>

@@ -1,0 +1,104 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block main %}
+
+    <section class="section section__katalog">
+
+        <div class="container">
+
+            <div class="katalog__header">
+
+                <h1 class="katalog__title">Каталог</h1>
+
+                <a href="{% url 'home' %}" class="katalog__button">
+                   <i class="fa-solid fa-arrow-left"></i>Вернуться на главную
+                </a>
+
+            </div>
+
+            <div class="katalog__content">
+                 <div class="katalog__line-1">
+                     {% for i in products %}
+                         <a href="{{ i.get_absolute_url }}" class="katalog__card">
+                              <div class="li">
+                                 <span class="desc">Описание:</span>
+                                 <p class="desc-text">{{ i.desc }}</p>
+
+                                  {% if i.image %}
+                                  <img src="{{ i.image.url }}" alt="{{ i.title }}" class="card__img">
+                                  {% else %}
+                                  <img src="/pictures/default.png" alt="{{ i.title }}" class="card__img-1">
+                                  {% endif %}
+
+                              </div>
+                              <h4 class="card__title">{{ i.title }}</h4>
+                              <p class="card__price">
+                                 {{ i.price }}руб
+                              </p>
+                              <div class="card__plus">
+                                 <i id="plus" class="fa-solid fa-plus"></i>
+                              </div>
+                           </a>
+                     {% endfor %}
+                </div>
+
+            </div>
+
+        </div>
+
+      </section>
+
+ <footer class="footer">
+
+           <div class="container">
+
+               <div class="footer__inner">
+
+                   <div class="footet__item footer__start">
+
+                           <div class="up-btn">
+                             <i class="fas fa-arrow-up"></i>
+                           </div>
+
+                           <div class="header__logo footer__logo">
+                              <button class="footer__btn-3">ГОРИЗОНТ</button>
+                       </div>
+
+                     </div>
+
+                     <div class="footer__item footer__center">
+
+                          <span>Все права защищены &copy;</span>
+
+                     </div>
+
+                     <div class="footer__item footer__end">
+
+                         <div class="social">
+
+                           <div>
+                             <a href="https://www.youtube.com/channel/UCgMNtb18CYEygaqkbWvCgMA/featured">
+                               <i id='i_link' class="fab fa-youtube"></i>
+                             </a>
+                            </div>
+                              <div>
+                                <a href="https://vk.com/id433520181">
+                                  <i id='i_link' class="fa-brands fa-vk"></i>
+                                  </a>
+                               </div>
+                              <div>
+                                <a href="https://web.telegram.org/z/">
+                                  <i id='i_link' class="fa-brands fa-telegram"></i>
+                                  <a href="https://web.telegram.org/z/">
+                              </div>
+
+                           </div>
+
+                     </div>
+
+               </div>
+
+           </div>
+
+       </footer>
+{% endblock %}

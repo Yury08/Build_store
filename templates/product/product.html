@@ -1,0 +1,107 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}
+    {{ product.title }}
+{% endblock %}
+
+{% block main %}
+
+      <section class="section section__katalog">
+        <div class="container">
+
+              <div class="product__header">
+
+                  <h1 class="product__title">{{ product.title }}</h1>
+
+              </div>
+
+                  <div class="page__contact-card">
+
+                      <img class="page__tovar-img" src="{{ product.image.url }}" alt="{{ object.title }}">
+
+                      <div class="page__contact-text">
+
+                          <div class="page__product-span">
+                               <span class="main__span-1">
+                              <i class="fa-solid fa-box"></i>высокое качество
+                           </span>
+
+                           <span class="main__span-2">
+                              <i class="fa-solid fa-truck"></i>быстрое произвотство
+                           </span>
+                          </div>
+
+                           <p class="main__price">{{ product.price }}руб</p>
+
+                           <p class="main__description">{{ product.desc }}</p>
+
+
+                          <form action="{% url 'cart:cart_add' product.id %}"  method="POST">
+
+                          <div class="quantity">
+                              <input id="quantity__input"  class="quantity__input" type="text" name="quantity" value="1">
+                          </div>
+                              {% csrf_token %}
+                              <input type="submit" class="main__left-button" value="Добавить в корзину">
+                           </form>
+                    </div>
+            </div>
+
+        </div>
+      </section>
+
+ <footer class="footer">
+
+           <div class="container">
+
+               <div class="footer__inner">
+
+                   <div class="footet__item footer__start">
+
+                           <div class="up-btn">
+                             <i class="fas fa-arrow-up"></i>
+                           </div>
+
+                           <div class="header__logo footer__logo">
+                              <button class="footer__btn-3">ГОРИЗОНТ</button>
+                       </div>
+
+                     </div>
+
+                     <div class="footer__item footer__center">
+
+                          <span>Все права защищены &copy;</span>
+
+                     </div>
+
+                     <div class="footer__item footer__end">
+
+                         <div class="social">
+
+                           <div>
+                             <a href="https://www.youtube.com/channel/UCgMNtb18CYEygaqkbWvCgMA/featured">
+                               <i id='i_link' class="fab fa-youtube"></i>
+                             </a>
+                            </div>
+                              <div>
+                                <a href="https://vk.com/id433520181">
+                                  <i id='i_link' class="fa-brands fa-vk"></i>
+                                  </a>
+                               </div>
+                              <div>
+                                <a href="https://web.telegram.org/z/">
+                                  <i id='i_link' class="fa-brands fa-telegram"></i>
+                                  <a href="https://web.telegram.org/z/">
+                              </div>
+                           </div>
+
+                     </div>
+
+               </div>
+
+           </div>
+
+       </footer>
+
+{% endblock %}

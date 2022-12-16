@@ -1,0 +1,121 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block main %}
+<section class="section section__katalog">
+    <div class="container market__container">
+
+        <div class="market__inner">
+
+            <div class="market__header">
+                <h1 class="market__title">Корзина</h1>
+                <a href="{% url 'catalog' %}" class="market__btn">
+                    <i class="fa-solid fa-arrow-left"></i>Венуться на главную
+                </a>
+            </div>
+
+       <div class="market__content">
+
+
+        {% if cart %}
+            {% for item in cart %}
+            {% with product=item.product %}
+
+
+            <div class="market__tovar">
+
+                <span>
+                    <a href=""><img class="tovar__img" src="{{ product.image.url }}" alt="img"></a>
+                </span>
+
+                <p class="tovar__quantity">Товара в корзине: {{ item.quantity }}</p>
+
+                <div class="tovar__desc">
+                    <p class="tovar__title">{{ product.title }}</p>
+                    <a class="tovar__button" href="{% url 'cart:cart_remove' product.id %}">Удалить из корзины</a>
+                </div>
+
+                <span class="tovar__price">{{ product.price }}</span>
+
+            </div>
+
+            {% endwith %}
+            {% endfor %}
+        {% else %}
+            <div class="market__tovar_else">
+                <h1 class="market__empty">Пока товаров нет в корзине</h1>
+            </div>
+        {% endif %}
+        </div>
+
+        <div class="market__content-2">
+
+            <div class="market__information inforation-2">
+                <p class="inf-1">Итог: {{ cart.get_total_quantity }}</p>
+                <hr>
+                <p class="inf-2">{{ cart.get_total_price }}руб</p>
+            </div>
+
+            <a href="orders/" class="insert">Оформить заказ</a>
+
+        </div>
+
+        </div>
+
+    </div>
+</section>
+
+     <footer class="footer basket__footer">
+
+           <div class="container">
+
+               <div class="footer__inner">
+
+                   <div class="footet__item footer__start">
+
+                           <div class="up-btn">
+                             <i class="fas fa-arrow-up"></i>
+                           </div>
+
+                           <div class="header__logo footer__logo">
+                              <button class="footer__btn-3">ГОРИЗОНТ</button>
+                       </div>
+
+                     </div>
+
+                     <div class="footer__item footer__center">
+
+                          <span>Все права защищены &copy;</span>
+
+                     </div>
+
+                     <div class="footer__item footer__end">
+
+                         <div class="social">
+
+                           <div>
+                             <a href="https://www.youtube.com/channel/UCgMNtb18CYEygaqkbWvCgMA/featured">
+                               <i id='i_link' class="fab fa-youtube"></i>
+                             </a>
+                            </div>
+                              <div>
+                                <a href="https://vk.com/id433520181">
+                                  <i id='i_link' class="fa-brands fa-vk"></i>
+                                  </a>
+                               </div>
+                              <div>
+                                <a href="https://web.telegram.org/z/">
+                                  <i id='i_link' class="fa-brands fa-telegram"></i>
+                                  <a href="https://web.telegram.org/z/">
+                              </div>
+
+                           </div>
+
+                     </div>
+
+               </div>
+
+           </div>
+
+       </footer>
+
+    {% endblock %}
